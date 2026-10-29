@@ -351,7 +351,7 @@ function HostDashboard({ bookings, listings, setBookings, onAdd }: { bookings: B
   const submit = (e: FormEvent) => {
     e.preventDefault();
     onAdd({
-      id: Date.now(), title: form.title, category: form.category, location: form.location, area: form.location.split(",")[0],
+      id: Date.now(), title: form.title, category: form.category, location: form.location, area: form.location.split(",")[0]?.trim() || form.location,
       price: +form.price, host: "You", hostRole: "NammaVibe Host", rating: 5, reviews: 0, highlights: form.desc.split(",").map((s) => s.trim()).filter(Boolean).slice(0, 3),
       unit: form.category === "Homestay" ? "night" : form.category === "Local Guides" ? "person" : "session",
       image: imgVilla, verified: false,
