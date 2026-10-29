@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --font-display: "Fraunces", serif;
+  --font-sans: "Nunito Sans", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
