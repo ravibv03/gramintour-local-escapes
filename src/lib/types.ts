@@ -79,12 +79,12 @@ export interface Testimonial {
 }
 
 export interface ListingFilters {
-  category?: Category | "All";
-  area?: string;
-  query?: string;
-  maxPrice?: number;
-  minRating?: number;
-  sort?: "recommended" | "price-asc" | "price-desc" | "rating";
+  category?: Category | "All" | undefined;
+  area?: string | undefined;
+  query?: string | undefined;
+  maxPrice?: number | undefined;
+  minRating?: number | undefined;
+  sort?: "recommended" | "price-asc" | "price-desc" | "rating" | undefined;
 }
 
 export interface CreateBookingInput {
