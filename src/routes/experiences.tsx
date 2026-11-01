@@ -6,22 +6,22 @@ import type { Category, ListingFilters } from "@/lib/types";
 import { ListingCard } from "@/components/ListingCard";
 
 type Search = {
-  category?: Category;
-  area?: string;
-  q?: string;
-  maxPrice?: number;
-  minRating?: number;
+  category?: Category | undefined;
+  area?: string | undefined;
+  q?: string | undefined;
+  maxPrice?: number | undefined;
+  minRating?: number | undefined;
   sort?: ListingFilters["sort"];
 };
 
 export const Route = createFileRoute("/experiences")({
   validateSearch: (s: Record<string, unknown>): Search => ({
-    category: typeof s.category === "string" ? (s.category as Category) : undefined,
-    area: typeof s.area === "string" ? s.area : undefined,
-    q: typeof s.q === "string" ? s.q : undefined,
-    maxPrice: typeof s.maxPrice === "number" ? s.maxPrice : undefined,
-    minRating: typeof s.minRating === "number" ? s.minRating : undefined,
-    sort: typeof s.sort === "string" ? (s.sort as ListingFilters["sort"]) : undefined,
+    category: typeof s["category"] === "string" ? (s["category"] as Category) : undefined,
+    area: typeof s["area"] === "string" ? s["area"] : undefined,
+    q: typeof s["q"] === "string" ? s["q"] : undefined,
+    maxPrice: typeof s["maxPrice"] === "number" ? s["maxPrice"] : undefined,
+    minRating: typeof s["minRating"] === "number" ? s["minRating"] : undefined,
+    sort: typeof s["sort"] === "string" ? (s["sort"] as ListingFilters["sort"]) : undefined,
   }),
   head: () => ({
     meta: [
